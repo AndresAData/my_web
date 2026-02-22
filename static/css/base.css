@@ -1,0 +1,52 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía global */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0D1117; /* fondo azul oscuro profundo */
+    color: #FFFFFF; /* texto principal blanco */
+    line-height: 1.6;
+}
+
+/* Links globales */
+a {
+    color: #00C2CB; /* turquesa */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF7A00; /* acento naranja */
+}
+
+/* Contenedor general */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Botones globales */
+button {
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+button.primary {
+    background-color: #00C2CB;
+    color: #0D1117;
+}
+
+button.primary:hover {
+    background-color: #FF7A00;
+    color: #FFFFFF;
+}
