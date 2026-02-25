@@ -6,38 +6,46 @@
 <!-- HERO -->
 <section class="hero-section">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center gy-5">
 
       <div class="col-lg-6">
-        
-
         <h1 class="hero-title">
           Backend & Data<br>
           <span>con impacto real</span>
         </h1>
 
         <p class="hero-text">
-          Desarrollo backend, datos y automatización enfocados en producto,
-          negocio y crecimiento real.
+          Desarrollo backend, arquitectura modular y sistemas orientados a datos
+          enfocados en producto, negocio y crecimiento medible.
         </p>
 
-        <a href="#projects" class="btn btn-hero">
-          Ver proyectos
-        </a>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-hero-primary">
+            Ver proyectos
+          </a>
+          <a href="#contact" class="btn btn-hero-secondary">
+            Contactar
+          </a>
+        </div>
       </div>
 
       <div class="col-lg-6 text-center">
-        <img src="{% static 'img/hero.png' %}" alt="Hero image" class="hero-image">
+        <img src="{% static 'img/hero.png' %}" alt="Backend & Data" class="hero-image">
       </div>
 
     </div>
   </div>
 </section>
 
+
 <!-- STACK -->
 <section class="stack-section" id="stack">
   <div class="container text-center">
     <h2 class="section-title">Stack & Conocimientos</h2>
+    <p class="section-subtitle">
+      Tecnologías y herramientas que utilizo para construir productos escalables.
+    </p>
+
     <div class="row g-4 justify-content-center">
 
       <div class="col-md-3">
@@ -52,7 +60,7 @@
         <div class="stack-card">
           <i class="bi bi-database stack-icon"></i>
           <h5>Data</h5>
-          <p>SQL, Excel, ETL</p>
+          <p>SQL, ETL, Excel</p>
         </div>
       </div>
 
@@ -67,8 +75,8 @@
       <div class="col-md-3">
         <div class="stack-card">
           <i class="bi bi-graph-up-arrow stack-icon"></i>
-          <h5>Marketing</h5>
-          <p>Growth, métricas, funnels</p>
+          <h5>Growth</h5>
+          <p>Métricas, funnels, automatización</p>
         </div>
       </div>
 
@@ -76,11 +84,24 @@
   </div>
 </section>
 
+
+<!-- DIVIDER -->
+<section class="section-divider">
+  <div class="container text-center">
+    <span>Del conocimiento a la ejecución</span>
+  </div>
+</section>
+
+
 <!-- PROYECTOS -->
 <section class="projects-section" id="projects">
   <div class="container">
     <h2 class="section-title text-center">Proyectos</h2>
-    <div class="row g-4 justify-content-center">
+    <p class="section-subtitle text-center">
+      Casos donde backend y datos generan impacto real.
+    </p>
+
+    <div class="row g-4">
 
       <div class="col-md-4">
         <div class="project-card">
@@ -89,7 +110,8 @@
           </div>
           <div class="project-info">
             <h3>CRM Inteligente</h3>
-            <p>Automatización y datos aplicados al negocio.</p>
+            <p>Automatización y datos aplicados a negocio real.</p>
+            <a href="#" class="project-link">Ver detalle →</a>
           </div>
         </div>
       </div>
@@ -97,11 +119,12 @@
       <div class="col-md-4">
         <div class="project-card">
           <div class="project-image">
-            <img src="{% static 'img/encuestas.png' %}" alt="Sistema de Encuestas">
+            <img src="{% static 'img/encuestas.png' %}" alt="Sistema Encuestas">
           </div>
           <div class="project-info">
             <h3>Sistema de Encuestas</h3>
             <p>Control de cuotas y analítica avanzada.</p>
+            <a href="#" class="project-link">Ver detalle →</a>
           </div>
         </div>
       </div>
@@ -114,63 +137,35 @@
           <div class="project-info">
             <h3>Microservicios</h3>
             <p>Arquitectura modular con FastAPI.</p>
+            <a href="#" class="project-link">Ver detalle →</a>
           </div>
         </div>
       </div>
 
     </div>
+
+    <div class="projects-cta text-center">
+      <a href="#" class="btn btn-projects">
+        Explorar todos los proyectos →
+      </a>
+    </div>
+
   </div>
 </section>
 
 
-<!-- CONTACTO -->
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <div class="col-md-6 contact-text">
-        <h2>¿Te gusta mi trabajo?</h2>
-        <p>Hablemos y construyamos algo juntos. Estoy disponible para proyectos de backend, data y automatización.</p>
-        <a href="mailto:contacto@andres.data" class="btn btn-contact">Contáctame</a>
-      </div>
-
-      <div class="col-md-6 text-md-end contact-icons">
-        <div class="social-links">
-          <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="#" target="_blank"><i class="bi bi-github"></i></a>
-          <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FRASE / HIGHLIGHT -->
-<section class="highlight-section">
   <div class="container text-center">
-    <h2 class="highlight-title">Insights & Decisiones</h2>
-    <div class="highlight-cards">
-
-      <div class="highlight-card">
-        <i class="bi bi-lightning-charge-fill"></i>
-        <p>“Los datos no valen nada si no generan decisiones.”</p>
-        <span>- Andrés Peña</span>
-      </div>
-
-      <div class="highlight-card">
-        <i class="bi bi-stars"></i>
-        <p>“La innovación real viene de la ejecución, no de la idea.”</p>
-        <span>- Inspiración Tech</span>
-      </div>
-
-      <div class="highlight-card">
-        <i class="bi bi-graph-up-arrow"></i>
-        <p>“Medir es crecer. Analiza, mejora y repite.”</p>
-        <span>- CEO Insights</span>
-      </div>
-
-    </div>
+    <h2>¿Construimos algo sólido?</h2>
+    <p class="contact-lead">
+      Si tienes una idea, un producto o un problema de datos,
+      podemos diseñar una solución backend escalable.
+    </p>
+    <a href="mailto:contacto@andres.data" class="btn btn-contact">
+      Escríbeme
+    </a>
   </div>
 </section>
+
 {% endblock %}

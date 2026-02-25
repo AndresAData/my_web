@@ -24,6 +24,8 @@
         <!-- CSS Adata -->
         <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
         <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
         {% block styles %}{% endblock  %}
 
     </head>
@@ -38,8 +40,50 @@
             {% endblock%}
 
         </main>
-        <footer>
+        <footer class="adata-footer">
+            <div class="container">
+                <div class="row align-items-center gy-4">
 
+                    <!-- Brand / Claim -->
+                    <div class="col-md-4 text-center text-md-start">
+                        <h5 class="footer-brand">Andres<span>.Data</span></h5>
+                        <p class="footer-text">
+                            Backend, datos y automatización con enfoque en impacto real.
+                        </p>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-md-4 text-center">
+                        <ul class="footer-links">
+                            <li><a href="#projects">Proyectos</a></li>
+                            <li><a href="#stack">Stack</a></li>
+                            <li><a href="#contact">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="col-md-4 text-center text-md-end">
+                        <div class="footer-social">
+                            <a href="#" target="_blank" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" target="_blank" aria-label="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="#" target="_blank" aria-label="Twitter">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom text-center mt-4">
+                    <small>
+                        © {{ now|date:"Y" }} Andres.Data — Built with Django & data mindset.
+                    </small>
+                </div>
+            </div>
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
         <script
