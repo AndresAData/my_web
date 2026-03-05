@@ -12,99 +12,97 @@
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
 
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
+        <!-- BOOTSTRAP 5.3.2 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-        <!-- CSS Adata -->
-        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-        <link rel="stylesheet" href="{% static 'css/landing.css' %}">
-        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 
         {% block styles %}{% endblock  %}
 
     </head>
 
-    <body>
+    <body class="d-flex flex-column min-vh-100 bg-dark text-light">
         <header>
             {% include "./includes/navbar.html" %}
         </header>
-        <main>
 
+        <main class="flex-fill">
             {% block content %}
-            {% endblock%}
-
+            {% endblock %}
         </main>
-        <footer class="adata-footer">
+        
+        <footer class="bg-black text-light pt-5 pb-4 mt-auto">
             <div class="container">
-                <div class="row align-items-center gy-4">
 
-                    <!-- Brand / Claim -->
-                    <div class="col-md-4 text-center text-md-start">
-                        <h5 class="footer-brand">Andres<span>.Data</span></h5>
-                        <p class="footer-text">
-                            Backend, datos y automatización con enfoque en impacto real.
-                        </p>
-                    </div>
+                <div class="row gy-4">
 
-                    <!-- Links -->
-                    <div class="col-md-4 text-center">
-                        <ul class="footer-links">
-                            <li><a href="#projects">Proyectos</a></li>
-                            <li><a href="#stack">Stack</a></li>
-                            <li><a href="#contact">Contacto</a></li>
-                        </ul>
-                    </div>
+                <!-- BRAND -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold">
+                    <span class="text-info">A.</span>data
+                    </h5>
+                    <p class="text-secondary small mt-3">
+                    Backend, datos y automatización con enfoque en impacto real.
+                    Arquitectura modular orientada a producto y negocio.
+                    </p>
+                </div>
 
-                    <!-- Social -->
-                    <div class="col-md-4 text-center text-md-end">
-                        <div class="footer-social">
-                            <a href="#" target="_blank" aria-label="LinkedIn">
-                                <i class="bi bi-linkedin"></i>
-                            </a>
-                            <a href="#" target="_blank" aria-label="GitHub">
-                                <i class="bi bi-github"></i>
-                            </a>
-                            <a href="#" target="_blank" aria-label="Twitter">
-                                <i class="bi bi-twitter"></i>
-                            </a>
-                        </div>
+                <!-- LINKS -->
+                <div class="col-lg-4">
+                    <h6 class="fw-semibold mb-3">Secciones</h6>
+                    <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="/#projects" class="text-secondary text-decoration-none">
+                        Proyectos
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/#stack" class="text-secondary text-decoration-none">
+                        Stack
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/#contact" class="text-secondary text-decoration-none">
+                        Contacto
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+
+                <!-- SOCIAL -->
+                <div class="col-lg-4">
+                    <h6 class="fw-semibold mb-3">Conecta</h6>
+
+                    <div class="d-flex gap-3 fs-5">
+                    <a href="#" class="text-secondary">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-secondary">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="#" class="text-secondary">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
                     </div>
+                </div>
 
                 </div>
 
-                <div class="footer-bottom text-center mt-4">
-                    <small>
-                        © {{ now|date:"Y" }} Andres.Data — Built with Django & data mindset.
-                    </small>
+                <hr class="border-secondary my-4">
+
+                <!-- BOTTOM -->
+                <div class="text-center small text-secondary">
+                © {{ now|date:"Y" }} Andres.Data — Built with Django & Data mindset.
                 </div>
+
             </div>
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
-
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
         {% block scripts %}
-            <script>
-                window.addEventListener("scroll", function () {
-                    const navbar = document.querySelector(".adata-navbar");
-                    navbar.classList.toggle("scrolled", window.scrollY > 30);
-                });
-            </script>
+
         {% endblock  %}
     </body>
 </html>

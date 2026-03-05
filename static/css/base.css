@@ -8,9 +8,14 @@
 /* Tipografía global */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0D1117; /* fondo azul oscuro profundo */
-    color: #FFFFFF; /* texto principal blanco */
+    background-color: #0D1117;
+    color: #FFFFFF;
     line-height: 1.6;
+    padding-top: 90px; /* espacio para navbar fixed */
+}
+
+main {
+    padding-top: 100px; /* ajusta según altura real del navbar */
 }
 
 /* Links globales */
@@ -24,11 +29,10 @@ a:hover {
 }
 
 /* Contenedor general */
-.container {
+.adata-container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
 }
 
 /* Botones globales */

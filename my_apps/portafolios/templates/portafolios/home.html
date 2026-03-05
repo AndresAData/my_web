@@ -3,169 +3,156 @@
 
 {% block content %}
 
-<!-- HERO -->
-<section class="hero-section">
-  <div class="container">
-    <div class="row align-items-center gy-5">
+<style>
+body {
+    background-color: #0f172a;
+}
 
-      <div class="col-lg-6">
-        <h1 class="hero-title">
-          Backend & Data<br>
-          <span>con impacto real</span>
+.section-dark {
+    background-color: #0f172a;
+}
+
+.section-darker {
+    background-color: #0b1220;
+}
+
+.hero-title span {
+    color: #22d3ee;
+}
+
+.btn-accent {
+    background-color: #22d3ee;
+    border: none;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.btn-accent:hover {
+    background-color: #06b6d4;
+    color: #0f172a;
+}
+
+.project-card {
+    background-color: #111827;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    transition: all 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #22d3ee;
+}
+
+.project-card img {
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    height: 180px;
+    object-fit: cover;
+}
+</style>
+
+<!-- HERO -->
+<section class="section-dark min-vh-100 d-flex align-items-center">
+    <div class="container text-center">
+
+        <h1 class="display-3 fw-bold hero-title mb-4">
+            Construyo <span>Backend & Data Systems</span>
         </h1>
 
-        <p class="hero-text">
-          Desarrollo backend, arquitectura modular y sistemas orientados a datos
-          enfocados en producto, negocio y crecimiento medible.
+        <p class="lead text-secondary mx-auto mb-5" style="max-width: 700px;">
+            Arquitectura modular, APIs robustas y sistemas orientados a datos.
+            Pensado para producto real, no para tutorial.
         </p>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-hero-primary">
-            Ver proyectos
-          </a>
-          <a href="#contact" class="btn btn-hero-secondary">
-            Contactar
-          </a>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="#projects" class="btn btn-accent btn-lg px-4">
+                Ver proyectos
+            </a>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-4">
+                Contacto
+            </a>
         </div>
-      </div>
-
-      <div class="col-lg-6 text-center">
-        <img src="{% static 'img/hero.png' %}" alt="Backend & Data" class="hero-image">
-      </div>
 
     </div>
-  </div>
 </section>
-
 
 <!-- STACK -->
-<section class="stack-section" id="stack">
-  <div class="container text-center">
-    <h2 class="section-title">Stack & Conocimientos</h2>
-    <p class="section-subtitle">
-      Tecnologías y herramientas que utilizo para construir productos escalables.
-    </p>
+<section class="section-darker py-5">
+    <div class="container text-center">
 
-    <div class="row g-4 justify-content-center">
+        <h2 class="fw-bold mb-4">Stack</h2>
 
-      <div class="col-md-3">
-        <div class="stack-card">
-          <i class="bi bi-code-slash stack-icon"></i>
-          <h5>Backend</h5>
-          <p>Python, Django, FastAPI</p>
+        <div class="row justify-content-center g-4 mt-3">
+
+            <div class="col-md-3 col-6">
+                <p class="text-secondary mb-1">Backend</p>
+                <h6 class="fw-semibold">Python · Django · FastAPI</h6>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <p class="text-secondary mb-1">Data</p>
+                <h6 class="fw-semibold">SQL · ETL · Excel</h6>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <p class="text-secondary mb-1">DevOps</p>
+                <h6 class="fw-semibold">Docker · Linux</h6>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <p class="text-secondary mb-1">Growth</p>
+                <h6 class="fw-semibold">Métricas · Automatización</h6>
+            </div>
+
         </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="stack-card">
-          <i class="bi bi-database stack-icon"></i>
-          <h5>Data</h5>
-          <p>SQL, ETL, Excel</p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="stack-card">
-          <i class="bi bi-hdd-network stack-icon"></i>
-          <h5>DevOps</h5>
-          <p>Docker, Linux, Deploy</p>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="stack-card">
-          <i class="bi bi-graph-up-arrow stack-icon"></i>
-          <h5>Growth</h5>
-          <p>Métricas, funnels, automatización</p>
-        </div>
-      </div>
 
     </div>
-  </div>
 </section>
 
+<!-- PROJECTS -->
+<section class="section-dark py-5" id="projects">
+    <div class="container">
 
-<!-- DIVIDER -->
-<section class="section-divider">
-  <div class="container text-center">
-    <span>Del conocimiento a la ejecución</span>
-  </div>
-</section>
-
-
-<!-- PROYECTOS -->
-<section class="projects-section" id="projects">
-  <div class="container">
-    <h2 class="section-title text-center">Proyectos</h2>
-    <p class="section-subtitle text-center">
-      Casos donde backend y datos generan impacto real.
-    </p>
-
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="project-card">
-          <div class="project-image">
-            <img src="{% static 'img/crm.png' %}" alt="CRM Inteligente">
-          </div>
-          <div class="project-info">
-            <h3>CRM Inteligente</h3>
-            <p>Automatización y datos aplicados a negocio real.</p>
-            <a href="#" class="project-link">Ver detalle →</a>
-          </div>
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Proyectos</h2>
+            <p class="text-secondary">Backend aplicado a problemas reales.</p>
         </div>
-      </div>
 
-      <div class="col-md-4">
-        <div class="project-card">
-          <div class="project-image">
-            <img src="{% static 'img/encuestas.png' %}" alt="Sistema Encuestas">
-          </div>
-          <div class="project-info">
-            <h3>Sistema de Encuestas</h3>
-            <p>Control de cuotas y analítica avanzada.</p>
-            <a href="#" class="project-link">Ver detalle →</a>
-          </div>
-        </div>
-      </div>
+        <div class="row justify-content-center g-4">
 
-      <div class="col-md-4">
-        <div class="project-card">
-          <div class="project-image">
-            <img src="{% static 'img/servicios.png' %}" alt="Microservicios">
-          </div>
-          <div class="project-info">
-            <h3>Microservicios</h3>
-            <p>Arquitectura modular con FastAPI.</p>
-            <a href="#" class="project-link">Ver detalle →</a>
-          </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card h-100">
+
+                    <img src="{% static 'img/crm.png' %}">
+
+                    <div class="p-4 d-flex flex-column h-100">
+
+                        <h5 class="fw-semibold">CRM Inteligente</h5>
+
+                        <p class="text-secondary small flex-grow-1 mt-2">
+                            Sistema modular con Django + FastAPI para automatización
+                            comercial y análisis de datos.
+                        </p>
+
+                        <a href="#" class="btn btn-accent btn-sm mt-3 align-self-start">
+                            Ver detalle →
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-      </div>
+
+        <div class="text-center mt-5">
+            <a href="{% url 'portafolios:projects' %}" class="btn btn-outline-light px-4">
+                Explorar todos →
+            </a>
+        </div>
 
     </div>
-
-    <div class="projects-cta text-center">
-      <a href="#" class="btn btn-projects">
-        Explorar todos los proyectos →
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="container text-center">
-    <h2>¿Construimos algo sólido?</h2>
-    <p class="contact-lead">
-      Si tienes una idea, un producto o un problema de datos,
-      podemos diseñar una solución backend escalable.
-    </p>
-    <a href="mailto:contacto@andres.data" class="btn btn-contact">
-      Escríbeme
-    </a>
-  </div>
 </section>
 
 {% endblock %}
