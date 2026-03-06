@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+
+{% block styles %}
+
+<style>
+
+.portfolio-card{
+    background:#1e293b;
+    border:none;
+    transition:transform .2s;
+}
+
+.portfolio-card:hover{
+    transform:translateY(-4px);
+}
+
+.tag-filter .btn{
+    margin:4px;
+}
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- HEADER -->
+<section class="portfolio-header text-light py-5">
+    <div class="container text-center">
+
+        <h1 class="fw-bold mb-3">
+            My Projects
+        </h1>
+
+        <p class="text-secondary mx-auto" style="max-width:600px;">
+            Backend systems, APIs, automation tools and data engineering
+            projects built with Python, Django, SQL and modern tools.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- TAG FILTER -->
+<section class="py-4 ">
+    <div class="container text-center">
+
+        <div class="tag-filter">
+
+            <a href="{% url 'portafolios:projects' %}"
+               class="btn btn-outline-info btn-sm">
+
+                All
+
+            </a>
+
+            {% for tag in tags %}
+
+            <a href="?tag={{ tag.name }}"
+               class="btn btn-outline-info btn-sm {% if active_tag == tag.name %}active{% endif %}">
+
+                {{ tag.name }}
+
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PROJECT GRID -->
+<section class="py-5 text-light">
+    <div class="container">
+
+        <div class="row g-4">
+
+            {% for project in projects %}
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card portfolio-card h-100 shadow">
+
+                    {% if project.image %}
+
+                    <img
+                        src="{% static 'img/hero.png' %}"
+                        class="card-img-top"
+                        style="height:200px; object-fit:cover;"
+                        alt="{{ project.title }}">
+
+                    {% endif %}
+
+                    <div class="card-body d-flex flex-column">
+
+                        <h5 class="fw-semibold text-white">
+                            {{ project.title }}
+                        </h5>
+
+                        <p class="text-secondary small">
+                            {{ project.description|truncatechars:120 }}
+                        </p>
+
+                        <div class="mb-3">
+
+                            {% for tag in project.tags.all %}
+
+                            <span class="badge bg-info text-dark me-1">
+                                {{ tag.name }}
+                            </span>
+
+                            {% endfor %}
+
+                        </div>
+
+                        <a href=""
+                           class="btn btn-outline-info mt-auto">
+
+                            View Project
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="col-12 text-center py-5">
+
+                <h4 class="fw-semibold">
+                    No projects found
+                </h4>
+
+                <p class="text-secondary">
+                    Try another tag filter.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

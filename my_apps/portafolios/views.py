@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from my_apps.portafolios.models import Project
+from my_apps.portafolios.models import Project, Tag
 # Create your views here.
 
 
@@ -8,19 +8,23 @@ def HomeView(request):
 
 
 def PortafolioView(request):
-    
+
     tag = request.GET.get("tag")
-    
+
     projects = (
         Project.objects
         .published()
         .with_relations()
         .ordered()
     )
-    
+
     if tag:
         projects = projects.with_tag(tag)
-    
-    return render(request, 'portafolios/portafolio.html', {
-        'projects': projects
+
+    tags = Tag.objects.all()
+
+    return render(request, "portafolios/projects.html", {
+        "projects": projects,
+        "tags": tags,
+        "active_tag": tag
     })
